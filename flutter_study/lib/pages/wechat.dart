@@ -37,7 +37,10 @@ class _WechatPageState extends State<WechatPage> with SingleTickerProviderStateM
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(left: 10.0),
-                child:Image.network(messages[index].imageUrl,fit: BoxFit.cover,height: 44,width: 44,),
+                child:ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                  child: Image.network(messages[index].imageUrl,fit: BoxFit.cover,height: 44,width: 44,),
+                )
               ),
               Padding(
                 padding: EdgeInsets.only(left: 10.0),

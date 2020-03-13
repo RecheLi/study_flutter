@@ -4,6 +4,7 @@ import './pages/me.dart';
 import './pages/wechat.dart';
 import './pages/contact.dart';
 import 'model/meItem.dart';
+import 'model/discoverItem.dart';
 
 final pages = [
   WechatPage(),
@@ -27,5 +28,14 @@ final meItems = [
   MeItem(Icon(Icons.photo,color: Colors.blueAccent,size: meItemIconSize), '相册'),
   MeItem(Icon(Icons.face,color: Colors.yellow,size: meItemIconSize), '表情'),
   MeItem(Icon(Icons.settings,color: Colors.blue,size: meItemIconSize), '设置'),
+];
 
+final discoverItemIconSize = 25.0;
+final discoverItems = [
+  DiscoverItem(Icon(Icons.swap_vertical_circle,color: Color(0xFFF9A825),size: discoverItemIconSize,), '朋友圈'),
+  DiscoverItem(Icon(Icons.videocam,color: Color(0xFFF9A825),size: discoverItemIconSize,), '视频号'),
+  DiscoverItem(Icon(Icons.scanner,color: Colors.blueAccent,size: discoverItemIconSize), '扫一扫'),
+  DiscoverItem(Icon(Icons.location_on,color: Colors.redAccent,size: discoverItemIconSize), '附近的餐厅'),
+  DiscoverItem(Icon(Icons.games,color: Colors.yellow,size: discoverItemIconSize), '游戏'),
+  DiscoverItem(Icon(Icons.apps,color: Colors.blue,size: discoverItemIconSize), '小程序'),
 ];

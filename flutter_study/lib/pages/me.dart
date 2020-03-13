@@ -39,8 +39,8 @@ class _MePageState extends State<MePage> with SingleTickerProviderStateMixin {
         child:Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            CircleAvatar(
-              radius: 25.0,
+            ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(4.0)),
               child: Image.network(meItems[index].avatarUrl,width: 50,height: 50.0,fit: BoxFit.cover,),
             ),
             Padding(
