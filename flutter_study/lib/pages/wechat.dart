@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../model/message.dart';
 
+
 class WechatPage extends StatefulWidget {
   @override
   _WechatPageState createState() => _WechatPageState();
@@ -39,7 +40,7 @@ class _WechatPageState extends State<WechatPage> with SingleTickerProviderStateM
                 padding: EdgeInsets.only(left: 10.0),
                 child:ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(4.0)),
-                  child: Image.network(messages[index].imageUrl,fit: BoxFit.cover,height: 44,width: 44,),
+                  child: Image.network(messages[index].avatarUrl,fit: BoxFit.cover,height: 44,width: 44,),
                 )
               ),
               Padding(

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Message  {
-  String imageUrl;
+  String avatarUrl;
   String name;
   String message;
-  Message(String imageUrl,String name,String message) {
-    this.imageUrl = imageUrl;
+  Message(String avatarUrl, String name, String message) {
+    this.avatarUrl = avatarUrl;
     this.name = name;
     this.message = message;
   }
