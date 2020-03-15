@@ -29,7 +29,7 @@ class _WechatPageState extends State<WechatPage> with SingleTickerProviderStateM
   Widget _messageTtemBuider(BuildContext context,int index) {
     return GestureDetector(
       onTap: ()=>{
-        Navigator.of(context).pushNamed('/chat')
+        Navigator.of(context).pushNamed('/chat',arguments: {'navTitle':messages[index].name})
       },
       child: Container(
           color: Colors.white,
@@ -68,31 +68,56 @@ class _WechatPageState extends State<WechatPage> with SingleTickerProviderStateM
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        color: Colors.black12,
         child: Column(
           children: <Widget>[
-            Container(
-              color: Colors.black12,
-              padding: EdgeInsets.all(4.0),
-              height: 44.0,
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child:TextField(
-                      textAlign: TextAlign.center,
-                      decoration: InputDecoration(
-                        hintText: 'search',
-                        hintStyle: TextStyle(color: Colors.white),
-                        border: InputBorder.none
+            GestureDetector(
+              onTap: (){
+                Navigator.of(context).pushNamed('/search');
+              },
+              child: Container(
+                  alignment: Alignment.center,
+                  margin: EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(4.0))
+                  ),
+                  height: 44.0,
+                  child: Row(
+//                crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                          alignment:Alignment.center,
+                          child: Center(
+                            child: Icon(Icons.search,color: Colors.black12,textDirection: TextDirection.ltr,),
+                          )
                       ),
-                      showCursor: false,
-                      onTap: (){
-                        Navigator.of(context).pushNamed('/search');
-                      },
-//                      focusNode: ,
-                    )
-                  )
-                ],
-              )
+                      Container(
+                        alignment: Alignment.center,
+                        child: Text('搜索',style: TextStyle(color: Colors.black12),),
+                      ),
+//                  Container(
+//                    child: Expanded(
+//                      child: TextField(
+//                      textAlign: TextAlign.center,
+//                        textAlignVertical: TextAlignVertical.center,
+//                        decoration: InputDecoration(
+//                            hintText: '搜索',
+//                            hintStyle: TextStyle(color: Colors.black12),
+//                            border: InputBorder.none
+//                        ),
+//                        showCursor: false,
+//                        onTap: (){
+//                          Navigator.of(context).pushNamed('/search');
+//                        },
+//                      ),
+//                    ),
+//                  )
+                    ],
+                  ),
+            )
+
             ),
             Expanded(
               child: ListView.separated(

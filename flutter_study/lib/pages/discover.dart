@@ -45,7 +45,9 @@ class _DiscoverPageState extends State<DiscoverPage> with SingleTickerProviderSt
   Widget _dicoverItemBuilder(BuildContext context, int index){
     return GestureDetector(
         onTap: ()=>{
-          
+          if(index==0) {
+            Navigator.pushNamed(context, '/timeline')
+          }
         },
         child: Container(
           padding: EdgeInsets.only(left: 10.0),

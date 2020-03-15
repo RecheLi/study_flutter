@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       ),
       home: MainPage(),
       routes: routers,
-//      onGenerateRoute: onGenerateRoute,
+      onGenerateRoute: onGenerateRoute,
     );
   }
 }

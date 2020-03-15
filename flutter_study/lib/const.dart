@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import './pages/discover.dart';
 import './pages/me.dart';
@@ -5,6 +6,14 @@ import './pages/wechat.dart';
 import './pages/contact.dart';
 import 'model/meItem.dart';
 import 'model/discoverItem.dart';
+
+double ScreenWidth(BuildContext context) {
+  return MediaQuery.of(context).size.width;
+}
+
+double ScreenHeight(BuildContext context) {
+  return MediaQuery.of(context).size.height;
+}
 
 final pages = [
   WechatPage(),

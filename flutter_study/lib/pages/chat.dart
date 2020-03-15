@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import '../model/chatModel.dart';
 
 class ChatPage extends StatefulWidget {
+  String navTitle;
+  ChatPage({this.navTitle});
   @override
   _ChatPageState createState() => _ChatPageState();
 }
 
 class _ChatPageState extends State<ChatPage> with SingleTickerProviderStateMixin {
   AnimationController _controller;
-  String _navTitle;
   List<ChatModel> _chatArray = [];
   void _getChatData(){
     for (int i=0;i<20;i++) {
@@ -86,8 +87,10 @@ class _ChatPageState extends State<ChatPage> with SingleTickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
+    dynamic obj = ModalRoute.of(context).settings.arguments;
+    widget.navTitle = obj['navTitle'];
     return Scaffold(
-      appBar: AppBar(title: Text('s',),backgroundColor: Colors.white,iconTheme: IconThemeData(opacity: 0.5),),
+      appBar: AppBar(title: Text(widget.navTitle),backgroundColor: Colors.white,iconTheme: IconThemeData(opacity: 0.5),),
       body: Container(
         child:ListView.builder(
           itemCount: _chatArray.length,
