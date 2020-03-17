@@ -92,10 +92,46 @@ class _ChatPageState extends State<ChatPage> with SingleTickerProviderStateMixin
     return Scaffold(
       appBar: AppBar(title: Text(widget.navTitle),backgroundColor: Colors.white,iconTheme: IconThemeData(opacity: 0.5),),
       body: Container(
-        child:ListView.builder(
-          itemCount: _chatArray.length,
-          itemBuilder: _chatBuilder,
-        )
+        child:Column(
+          children: <Widget>[
+            Expanded(
+              child: ListView.builder(
+                itemCount: _chatArray.length,
+                itemBuilder: _chatBuilder,
+              ),
+            ),
+            Container(
+              alignment: Alignment.bottomCenter,
+              height: 60.0,
+              color: Colors.black12,
+              child: Row(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(left: 10.0),
+                    child: Icon(Icons.volume_up,color: Colors.black,),
+                  ),
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: '',
+                        hintStyle: TextStyle(backgroundColor: Colors.white,color: Colors.black),
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Icon(Icons.keyboard,color: Colors.black,),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Icon(Icons.add,color: Colors.black,),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

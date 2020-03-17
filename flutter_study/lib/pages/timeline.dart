@@ -107,7 +107,6 @@ class _TimelinePageState extends State<TimelinePage> with SingleTickerProviderSt
           itemBuilder: _timelineBuilder,
           separatorBuilder: _dividerBiulder,
           controller: _scrollController,
-
         )
       )
     );
